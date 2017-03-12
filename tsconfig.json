@@ -11,6 +11,14 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "typeRoots": [
+      "./node_modules/@types/"
+    ],
+    "compileOnSave": true,
+  "exclude": [
+    "node_modules/*",
+    "**/*-aot.ts"
+  ]
   }
 }
