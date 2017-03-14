@@ -18,6 +18,7 @@ import { ToastrService } from "./common/toastr.service";
 import { CreateEventComponent } from "./events/create-event.component";
 import { Error404Component } from "./error/404.component";
 import { AuthService } from "./events/user/auth.service";
+import { CreateSessionComponent } from "./events/event-details/create-session.component";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AuthService } from "./events/user/auth.service";
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent
   ],
   imports: [
     BrowserModule,
