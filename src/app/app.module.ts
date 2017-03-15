@@ -20,6 +20,7 @@ import { Error404Component } from "./error/404.component";
 import { AuthService } from "./events/user/auth.service";
 import { CreateSessionComponent } from "./events/event-details/create-session.component";
 import { SessionListComponent } from "./events/event-details/session-list.component";
+import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SessionListComponent } from "./events/event-details/session-list.compon
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { SessionListComponent } from "./events/event-details/session-list.compon
 
 export class AppModule { }
 
-function checkDirtyState(component: CreateEventComponent) {
+export function checkDirtyState(component: CreateEventComponent) {
   if (component.isDirty) {
     return window.confirm('You have not saved this event, do you really want ot cancel?')
   } else {
