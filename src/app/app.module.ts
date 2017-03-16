@@ -22,8 +22,10 @@ import { SessionListComponent } from "./events/event-details/session-list.compon
 import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 import { DurationPipe } from "./events/shared/duration.pipe";
 import { TOASTR_TOKEN, Toastr } from "./common/toastr.service";
+import { JQ_TOKEN } from "./common/jQuery.service";
 
-declare let toastr: Toastr
+declare let toastr: Toastr;
+declare let jQuery: Object;
 
 @NgModule({
   declarations: [
