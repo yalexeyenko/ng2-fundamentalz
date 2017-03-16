@@ -23,6 +23,7 @@ import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 import { DurationPipe } from "./events/shared/duration.pipe";
 import { TOASTR_TOKEN, Toastr } from "./common/toastr.service";
 import { JQ_TOKEN } from "./common/jQuery.service";
+import { SimpleModalComponent } from "./common/simpleModal.component";
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -39,7 +40,8 @@ declare let jQuery: Object;
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,10 @@ declare let jQuery: Object;
     {
      provide: TOASTR_TOKEN,
      useValue: toastr 
+    },
+    {
+     provide: JQ_TOKEN,
+     useValue: jQuery 
     },
     EventRouteActivator,
     EventListResolver,
