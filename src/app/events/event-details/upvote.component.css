@@ -21,11 +21,12 @@
 .badge-inverse {
   background-color: #fff;
   color: #4e5d6c;
+  margin-right: 
 }
 
 .votingCount {
-  margin-left: -11px;
-  margin-top: 1px;
+  margin-left: 10px;
+  margin-top: -104px;
   font-weight: bold;
   font-size: 14px;
 }

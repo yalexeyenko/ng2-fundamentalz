@@ -26,6 +26,7 @@ import { JQ_TOKEN } from "./common/jQuery.service";
 import { SimpleModalComponent } from "./common/simpleModal.component";
 import { ModalTriggerDirective } from "./common/modalTrigger.directive";
 import { UpvoteComponent } from "./events/event-details/upvote.component";
+import { VoterService } from "./events/event-details/voter.service";
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -61,7 +62,8 @@ declare let jQuery: Object;
     {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
     EventRouteActivator,
     EventListResolver,
-    AuthService
+    AuthService,
+    VoterService
   ],
   bootstrap: [EventsAppComponent]
 })
