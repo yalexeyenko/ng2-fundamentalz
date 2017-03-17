@@ -29,6 +29,8 @@ export class SimpleModalComponent {
     title: string
     @Input()
     elementId: string
+    @Input()
+    closeBodyOnClick: string
     @ViewChild('modalContainer') containerEl: ElementRef
 
     constructor(
@@ -36,6 +38,8 @@ export class SimpleModalComponent {
     ) {}
 
     closeModal() {
-        this.$(this.containerEl.nativeElement).modal('hide');
+        if (this.closeBodyOnClick.toLocaleLowerCase() === 'true') {
+            this.$(this.containerEl.nativeElement).modal('hide');
+        }
     }
 }
