@@ -54,20 +54,11 @@ declare let jQuery: Object;
   ],
   providers: [
     EventService,
-    {
-     provide: TOASTR_TOKEN,
-     useValue: toastr 
-    },
-    {
-     provide: JQ_TOKEN,
-     useValue: jQuery 
-    },
+    {provide: TOASTR_TOKEN, useValue: toastr},
+    {provide: JQ_TOKEN, useValue: jQuery},
+    {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
     EventRouteActivator,
     EventListResolver,
-    {
-      provide: 'canDeactivateCreateEvent',
-      useValue: checkDirtyState
-    },
     AuthService
   ],
   bootstrap: [EventsAppComponent]

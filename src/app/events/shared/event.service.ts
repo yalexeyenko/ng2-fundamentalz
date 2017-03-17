@@ -7,7 +7,7 @@ export class EventService {
 
     getEvents(): Observable<IEvent[]> {
         let subject = new Subject<IEvent[]>();
-        setTimeout(() => {subject.next(EVENTS); subject.complete();}, 100)
+        setTimeout(() => { subject.next(EVENTS); subject.complete(); }, 100)
         return subject;
     }
 
@@ -31,7 +31,8 @@ export class EventService {
         var results: ISession[] = [];
 
         EVENTS.forEach(event => {
-            var matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1);
+            var matchingSessions = event.sessions.filter(session =>
+                session.name.toLocaleLowerCase().indexOf(term) > -1);
             matchingSessions = matchingSessions.map((session:any) => {
                 session.eventId = event.id;
                 return session;
