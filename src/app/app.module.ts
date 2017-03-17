@@ -27,6 +27,7 @@ import { SimpleModalComponent } from "./common/simpleModal.component";
 import { ModalTriggerDirective } from "./common/modalTrigger.directive";
 import { UpvoteComponent } from "./events/event-details/upvote.component";
 import { VoterService } from "./events/event-details/voter.service";
+import { LocationValidator } from "./events/location-validator";
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -46,7 +47,8 @@ declare let jQuery: Object;
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    LocationValidator
   ],
   imports: [
     BrowserModule,
