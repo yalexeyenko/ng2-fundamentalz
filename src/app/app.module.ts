@@ -12,7 +12,6 @@ import { EventsThumbnailComponent } from "./events/event-thumbnail.component";
 import { EventListResolver } from "./events/events-list-resolver.service";
 import { EventService } from "./events/shared/event.service";
 import { EventDetailsComponent } from "./events/event-details/event-details.component";
-import { EventRouteActivator } from "./events/event-details/event-route-activator.component";
 import { NavBarComponent } from "./nav/navbar.component";
 import { CreateEventComponent } from "./events/create-event.component";
 import { Error404Component } from "./error/404.component";
@@ -28,6 +27,7 @@ import { ModalTriggerDirective } from "./common/modalTrigger.directive";
 import { UpvoteComponent } from "./events/event-details/upvote.component";
 import { VoterService } from "./events/event-details/voter.service";
 import { LocationValidator } from "./events/location-validator";
+import { EventResolver } from "./events/event-resolver";
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -62,8 +62,8 @@ declare let jQuery: Object;
     {provide: TOASTR_TOKEN, useValue: toastr},
     {provide: JQ_TOKEN, useValue: jQuery},
     {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
-    EventRouteActivator,
     EventListResolver,
+    EventResolver,
     AuthService,
     VoterService
   ],
