@@ -38,6 +38,15 @@ export class AuthService {
         return !!this.currentUser
     }
 
+    logout() {
+        this.currentUser = undefined;
+
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(`http://localhost:8808/api/logout`, JSON.stringify({}), options);
+    }
+
     checkAuthenticationStatus() {
         return this.http.get(`http://localhost:8808/api/currentIdentity`).map((response: any) => {
             console.log('response:', response)
