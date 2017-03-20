@@ -24,11 +24,35 @@ export class AuthService {
     }
 
     updateCurrentUser(firstName: string, lastName: string) {
-        this.currentUser.firstName = firstName
-        this.currentUser.lastName = lastName
+        this.currentUser.firstName = firstName;
+        this.currentUser.lastName = lastName;
+
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        console.log('updateCurrentUser()...');
+        return this.http.put(`http://localhost:8808/api/users/${this.currentUser.id}`, JSON.stringify(this.currentUser), options);
     }
 
     isAuthenticated() {
         return !!this.currentUser
+    }
+
+    checkAuthenticationStatus() {
+        return this.http.get(`http://localhost:8808/api/currentIdentity`).map((response: any) => {
+            console.log('response:', response)
+            console.log('response._body:', response._body)
+            if (response._body) {
+                console.log('response:', response)
+                return response.json();
+            } else {
+                console.log('response:', response)
+                return {}
+            }
+        }).do(currentUser => {
+            if (!!currentUser.userName) {
+                this.currentUser = currentUser;
+            }
+        }).subscribe();
     }
 }
